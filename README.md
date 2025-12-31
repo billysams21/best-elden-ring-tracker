@@ -149,15 +149,6 @@ This project integrates data and functionality from multiple sources:
 - **Location Database** - Comprehensive item locations from [elden-ring-progression-tracker](https://github.com/elden-ring-progression-tracker/elden-ring-progression-tracker.github.io)
 - **Visual Assets** - Elden Ring official branding and Mantinia font
 
-## Browser Compatibility
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Opera 76+
-
-Requires JavaScript enabled and support for ES6+ features.
-
 ## Privacy
 
 All save file processing happens locally in your browser. No data is uploaded or transmitted to external servers.
@@ -173,8 +164,8 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 ---
 
 **A tool for the Tarnished, by the Tarnished
+**Tips:**
 - Enable "Include DLC" if you have Shadow of the Erdtree
-- Enable "Include Altered Armor" to track armor variants
 - Use search to quickly find specific items
 - Farmable items (♾️) can be obtained multiple times
 - Click wiki links for detailed acquisition guides
