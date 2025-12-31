@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Elden Ring Tracker - 100% Completion Guide</title>
+    <meta name="description" content="Automatic Elden Ring item tracker with location-based hints for 100% completion">
+    <meta name="author" content="billysams21">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚔️</text></svg>">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>ELDEN RING Progress Tracker</h1>
+            <p class="subtitle">Complete Collection Tracker with Location Hints</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Upload Section -->
+        <section class="upload-section" id="upload-section">
+            <div class="upload-compact">
+                <input type="file" id="savefile" accept=".sl2, .co2" class="file-input">
+                <label for="savefile" class="file-label">Choose Save File (.sl2 / .co2)</label>
+                <span class="file-hint">C:\Users\[username]\AppData\Roaming\EldenRing\[SteamID]\ER0000.sl2</span>
+            </div>
+
+            <div id="slot-options-container" class="slot-options-container hidden">
+                <select id="slot-selector" class="slot-dropdown">
+                    <option value="" disabled selected>Select Character...</option>
+                </select>
+                
+                <div class="options-inline">
+                    <label><input type="checkbox" id="option-dlc-items" checked> DLC</label>
+                    <label><input type="checkbox" id="option-altered-armor"> Altered Armor</label>
+                    <label><input type="checkbox" id="option-unobtainable"> Unobtainable</label>
+                </div>
+                
+                <button id="btn-calculate" class="btn-primary">Analyze</button>
+            </div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" class="loading-indicator hidden">
+            <div class="spinner"></div>
+            <p>Analyzing save file...</p>
+        </div>
+
+        <!-- Results Section (hidden until calculated) -->
+        <section id="results-section" class="results-section hidden">
+            <!-- Global Progress Dashboard -->
+            <div class="dashboard">
+                <div id="global-stats" class="global-stats-horizontal">
+                    <span class="character-info">Character: <strong id="character-name">-</strong></span>
+                    <span class="progress-large"><strong id="total-progress">0%</strong> Complete</span>
+                    <span class="items-count"><span id="items-owned">0</span> / <span id="items-total">0</span> Items</span>
+                </div>
+                        <div class="progress-bar-container">
+                            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="stat-item">
+                            <span id="item-count" class="stat-count">0 / 0 items</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Breakdown -->
+                <div class="card category-breakdown">
+                    <h3>Category Breakdown</h3>
+                    <div id="category-stats" class="category-stats">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label>
+                        <input type="radio" name="filter-status" value="all" checked>
+                        <span>Show All</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="filter-status" value="owned">
+                        <span>Owned Only</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="filter-status" value="missing">
+                        <span>Missing Only</span>
+                    </label>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="search-items" placeholder="🔍 Search items...">
+                </div>
+            </div>
+
+            <!-- Regional Accordion -->
+            <div id="regions-container" class="regions-container">
+                <!-- Will be populated by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Made with ❤️ by <a href="https://github.com/billysams21" target="_blank">billysams21</a>
+            </p>
+            <p class="credits">
+                Inspired by <a href="https://github.com/CyberGiant7/Elden-Ring-Automatic-Checklist" target="_blank">CyberGiant7's Automatic Checklist</a>
+                and <a href="https://github.com/elden-ring-progression-tracker/elden-ring-progression-tracker.github.io" target="_blank">Zidodelakarai's Progression Tracker</a>
+            </p>
+            <p class="disclaimer">
+                This tool reads Elden Ring save files in read-only mode. It does not modify your save file in any way.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/binaryParser.js"></script>
+    <script src="assets/js/dataLoader.js"></script>
+    <script src="assets/js/tracker.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
