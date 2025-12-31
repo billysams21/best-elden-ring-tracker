@@ -16,10 +16,9 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <h1>ELDEN RING Progress Tracker</h1>
-            <p class="subtitle">Complete Collection Tracker with Location Hints</p>
-        </div>
+        <img src="assets/img/logo.png" alt="Elden Ring Logo" class="logo">
+        <h1>Progress Tracker</h1>
+        <p class="subtitle">Complete Collection Tracker with Location Hints</p>
     </header>
 
     <!-- Main Container -->
@@ -39,8 +38,6 @@
                 
                 <div class="options-inline">
                     <label><input type="checkbox" id="option-dlc-items" checked> DLC</label>
-                    <label><input type="checkbox" id="option-altered-armor"> Altered Armor</label>
-                    <label><input type="checkbox" id="option-unobtainable"> Unobtainable</label>
                 </div>
                 
                 <button id="btn-calculate" class="btn-primary">Analyze</button>
@@ -62,44 +59,41 @@
                     <span class="progress-large"><strong id="total-progress">0%</strong> Complete</span>
                     <span class="items-count"><span id="items-owned">0</span> / <span id="items-total">0</span> Items</span>
                 </div>
-                        <div class="progress-bar-container">
-                            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
-                        </div>
-                        <div class="stat-item">
-                            <span id="item-count" class="stat-count">0 / 0 items</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category Breakdown -->
-                <div class="card category-breakdown">
-                    <h3>Category Breakdown</h3>
-                    <div id="category-stats" class="category-stats">
-                        <!-- Will be populated by JS -->
-                    </div>
-                </div>
             </div>
 
             <!-- Filter Controls -->
-            <div class="filter-controls">
-                <div class="filter-group">
-                    <label>
-                        <input type="radio" name="filter-status" value="all" checked>
-                        <span>Show All</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="filter-status" value="owned">
-                        <span>Owned Only</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="filter-status" value="missing">
-                        <span>Missing Only</span>
-                    </label>
-                </div>
+            <div class="filters-compact">
+                <input type="text" id="search-items" class="search-input" placeholder="Search items...">
                 
-                <div class="search-box">
-                    <input type="text" id="search-items" placeholder="🔍 Search items...">
-                </div>
+                <label class="filter-radio"><input type="radio" name="filter-status" value="all" checked> All</label>
+                <label class="filter-radio"><input type="radio" name="filter-status" value="owned"> Owned</label>
+                <label class="filter-radio"><input type="radio" name="filter-status" value="missing"> Missing</label>
+                
+                <select id="filter-category" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="Weapons">Weapons</option>
+                    <option value="Armor">Armor</option>
+                    <option value="Talismans">Talismans</option>
+                    <option value="Magic">Magic</option>
+                    <option value="Ashes of War">Ashes of War</option>
+                    <option value="Spirit Ashes">Spirit Ashes</option>
+                    <option value="Bell Bearings">Bell Bearings</option>
+                    <option value="Cookbooks">Cookbooks</option>
+                    <option value="Crystal Tears">Crystal Tears</option>
+                    <option value="Key Items">Key Items</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <select id="filter-acquisition" class="filter-select">
+                    <option value="all">All Methods</option>
+                    <option value="boss">Boss</option>
+                    <option value="chest">Chest</option>
+                    <option value="merchant">Merchant</option>
+                    <option value="foe">Foe</option>
+                    <option value="quest">Quest</option>
+                    <option value="invader">Invader</option>
+                    <option value="scarab">Scarab</option>
+                </select>
             </div>
 
             <!-- Regional Accordion -->
@@ -126,6 +120,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="assets/js/wallpaper.js"></script>
     <script src="assets/js/binaryParser.js"></script>
     <script src="assets/js/dataLoader.js"></script>
     <script src="assets/js/tracker.js"></script>
