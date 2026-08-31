@@ -157,9 +157,11 @@ All save file processing happens locally in your browser. No data is uploaded or
 
 MIT License - See [LICENSE](LICENSE) file for details.
 
-## Contributing
+## Contributing & Support
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
+
+If you find this tool helpful, consider [supporting on Ko-fi](https://ko-fi.com/billysams21).
 
 ---
 
